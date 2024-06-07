@@ -1,0 +1,307 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --primary-color: #ff6f61;
+  --secondary-color: hsl(23, 100%, 64%);
+  --background-color: #02701e; /* Dark Green background color */
+  --container-color: hwb(0 5% 95%); /* Light pink container color */
+  --neon-color-1: rgb(109, 101, 105); /* Neon pink color */
+  --neon-color-2: #66ffb2; /* Neon green color */
+  --neon-color-3: #6666ff; /* Neon blue color */
+  --neon-color-4: hsl(300, 6%, 27%); /* Neon violet color */
+  --text-dark: #1f2937;
+  --text-light: #6b7280;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-dark);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: var(--container-color); /* Set container color */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  animation: fadeIn 1s ease; /* Add animation */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--text-light);
+  margin-bottom: 1rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo img {
+  width: 50px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.search input {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--text-light);
+  border-radius: 2rem;
+  outline: none;
+}
+
+.search button {
+  padding: 0.5rem;
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+main {
+  display: flex;
+  gap: 2rem;
+}
+
+.sidebar {
+  flex: 1;
+}
+
+.sidebar h2 {
+  margin-bottom: 1rem;
+  color: hsl(56, 100%, 64%);
+}
+
+.sidebar ul {
+  list-style: none;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.sidebar li {
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sidebar li:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.sidebar li.active {
+  background-color: var(--secondary-color);
+  color: var(--white);
+}
+
+.playlist {
+  flex: 2;
+}
+
+.playlist h2 {
+  margin-bottom: 1rem;
+  color: hsl(54, 100%, 64%);
+}
+
+.playlist ul {
+  list-style: none;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.playlist li {
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.playlist li:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.playlist li.active {
+  background-color: var(--secondary-color);
+  color: var(--white);
+}
+
+.player {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background-color: var(--white);
+  border-radius: 1rem;
+  position: relative;
+  border: 2px solid transparent; /* Thin border */
+  animation: neonBorder 10s linear infinite; /* Neon border animation */
+}
+
+@keyframes neonBorder {
+  0% {
+    border-color: var(--neon-color-1);
+    box-shadow: 0 0 10px var(--neon-color-1), 0 0 20px var(--neon-color-1), 0 0 30px var(--neon-color-1), 0 0 40px var(--neon-color-1);
+  }
+  25% {
+    border-color: var(--neon-color-2);
+    box-shadow: 0 0 10px var(--neon-color-2), 0 0 20px var(--neon-color-2), 0 0 30px var(--neon-color-2), 0 0 40px var(--neon-color-2);
+  }
+  50% {
+    border-color: var(--neon-color-3);
+    box-shadow: 0 0 10px var(--neon-color-3), 0 0 20px var(--neon-color-3), 0 0 30px var(--neon-color-3), 0 0 40px var(--neon-color-3);
+  }
+  75% {
+    border-color: var(--neon-color-4);
+    box-shadow: 0 0 10px var(--neon-color-4), 0 0 20px var(--neon-color-4), 0 0 30px var(--neon-color-4), 0 0 40px var(--neon-color-4);
+  }
+  100% {
+    border-color: var(--neon-color-1);
+    box-shadow: 0 0 10px var(--neon-color-1), 0 0 20px var(--neon-color-1), 0 0 30px var(--neon-color-1), 0 0 40px var(--neon-color-1);
+  }
+}
+
+.image-container {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  position: relative;
+  box-shadow: 0 0 10px var(--neon-color-1), 0 0 20px var(--neon-color-1), 0 0 30px var(--neon-color-1), 0 0 40px var(--neon-color-1); /* Neon glow effect */
+}
+
+.image-container::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  border-radius: 50%;
+  border: 2px solid var(--white);
+  box-shadow: 0 0 10px var(--white), 0 0 20px var(--white), 0 0 30px var(--neon-color-1), 0 0 40px var(--neon-color-1); /* Combined white and neon glow */
+  z-index: -1;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%; /* Make the image round */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  animation: rotate 8s linear infinite; /* Add rotation animation */
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.controls button {
+  padding: 1rem;
+  border: none;
+  background-color: hsl(54, 100%, 64%);
+  color: var(--white);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.controls button:hover {
+  background-color: var(--secondary-color);
+}
+
+.seek-bar {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+#seek-slider {
+  width: 100%;
+}
+
+.volume-control {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+#volume-slider {
+  width: 100px;
+}
+
+#mute-icon,
+#unmute-icon {
+  cursor: pointer;
+}
+
+.timing {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: var(--text-dark);
+}
+
+.now-playing {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: hsl(239, 100%, 64%);
+  text-shadow: 0 0 5px var(--neon-color-1), 0 0 10px var(--neon-color-1), 0 0 20px var(--neon-color-1);
+}
